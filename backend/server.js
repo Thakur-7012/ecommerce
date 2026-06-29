@@ -10,7 +10,7 @@ const app = express();
 
 const routes = require("./index");
 
-app.use(express.json());
+app.use(express.json({ limit: "2mb" }));
 
 mongoose.connect(process.env.MONGO_URI)
 	.then(() => {
