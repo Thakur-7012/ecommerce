@@ -1,0 +1,17 @@
+backend/node_modules/
+backend/.env
+
+# VS Code settings (optional)
+.vscode/
+
+# Build folders NOT HAVING NOW
+backend/dist/
+backend/build/
+
+# OS files NOT HAVING NOW
+.DS_Store
+Thumbs.db
+
+# Logs NOTE: may be we won't need this for our current project
+backend/logs/
+*.log
