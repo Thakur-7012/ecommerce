@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 
 globalThis.crypto = globalThis.crypto || require("crypto").webcrypto;
@@ -10,7 +12,7 @@ const routes = require("./index");
 
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/ecommerce")
+mongoose.connect(process.env.MONGO_URI)
 	.then(() => {
 		console.log("MongoDB Connected");
 	})
@@ -20,6 +22,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/ecommerce")
 
 app.use("/api", routes.router);
 
-app.listen(4000, () => {
-	console.log("Server running on Port 4000");
+const PORT = process.env.PORT || '4000';
+
+app.listen(PORT, () => {
+	console.log(`Server running on Port ${PORT}`);
 });
