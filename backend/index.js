@@ -1,11 +1,13 @@
-require("dotenv").config();
+require('dotenv').config();
 
-const express = require("express");
+const express = require('express');
 
 const router = express.Router();
 
-const product = require("./routes/product");
+const product = require('./routes/product');
 
-router.use("/product", product.router);
+router.use('/products', product.router);
 
-module.exports = { router };
+module.exports = {
+	router
+};
